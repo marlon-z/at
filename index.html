@@ -1,533 +1,119 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数字内容创作- 专业图文内容创作</title>
+    <meta name="description" content="宣传视频制作服务，为您的品牌提升影响力">
+    <title>泊头市艾特网站服务中心 - 宣传视频制作</title>
     <style>
-        /* 基础样式重置 */
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
-            line-height: 1.6;
+            background-color: #f4f4f9;
             color: #333;
-            background-color: #f9f9f9;
         }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* 头部导航 */
         header {
-            background-color: #fff;
+            background-color: #333;
+            color: white;
             padding: 20px 0;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
         }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header .logo {
-            font-size: 2em;
-            font-weight: bold;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        header nav ul li {
-            margin-left: 25px;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover,
-        header nav ul li a.active {
-            color: #3498db;
-        }
-
-        /* 英雄区域 */
         .hero {
-            background-color: #3498db; /* 移除了背景图片，使用纯色背景 */
-            color: #fff;
-            padding: 80px 0; /* 调整了padding因为没有背景图 */
-            text-align: center;
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
-
         .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: 600;
+            font-size: 3rem;
         }
-
-        .hero p {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero .cta-button {
-            display: inline-block;
-            background-color: #e67e22;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.1em;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero .cta-button:hover {
-            background-color: #d35400;
-        }
-
-        /* 内容区域通用样式 */
         .section {
-            padding: 60px 0;
-        }
-
-        .section-title {
+            padding: 40px 20px;
             text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            color: #2c3e50;
-            position: relative;
         }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: #3498db;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        /* 关于我们 */
-        #about p {
-            font-size: 1.1em;
-            text-align: center;
+        .video-container {
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto;
+            padding-bottom: 20px;
         }
-
-        /* 服务介绍 */
-        #services .service-item {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex; /* 使内容垂直居中 */
-            flex-direction: column; /* 内容垂直排列 */
-            justify-content: center; /* 垂直居中 */
-            min-height: 200px; /* 给定一个最小高度，避免内容过少时太扁 */
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
         }
-
-        #services .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-
-        #services .service-item h3 {
-            font-size: 1.8em;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-
-        #services .service-item p {
-            font-size: 1em;
-            color: #555;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .services {
+            display: flex;
+            justify-content: center;
             gap: 30px;
         }
-
-        /* 产品/案例展示 */
-        #portfolio .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-
-        #portfolio .portfolio-item {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 20px; /* 之前图片占据空间，现在内容直接padding */
-            min-height: 180px; /* 给定一个最小高度 */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        #portfolio .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-
-        #portfolio .portfolio-item-content h4 {
-            font-size: 1.4em;
-            margin-bottom: 10px;
+        .service-card h3 {
             color: #333;
-        }
-
-        #portfolio .portfolio-item-content p {
-            font-size: 0.95em;
-            color: #666;
             margin-bottom: 15px;
         }
-
-        #portfolio .portfolio-item-content .read-more {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
+        .service-card p {
+            font-size: 14px;
+            color: #666;
         }
-        #portfolio .portfolio-item-content .read-more:hover {
-            text-decoration: underline;
-        }
-
-        /* 联系我们 */
-        #contact {
-            background-color: #ecf0f1;
-        }
-
-        #contact .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        #contact .form-group {
-            margin-bottom: 20px;
-        }
-
-        #contact .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        #contact .form-group input,
-        #contact .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        #contact .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        #contact .submit-button {
-            display: block;
-            width: 100%;
-            background-color: #3498db;
-            color: #fff;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        #contact .submit-button:hover {
-            background-color: #2980b9;
-        }
-
-        #contact .contact-info {
-            text-align: center;
-            margin-top: 40px;
-        }
-        #contact .contact-info p {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-
-
-        /* 页脚 */
         footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
+            background-color: #333;
+            color: white;
             text-align: center;
-            padding: 30px 0;
-        }
-
-        footer p {
-            margin: 0;
-        }
-        footer a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-            }
-            header nav ul {
-                margin-top: 15px;
-                flex-direction: column;
-                align-items: center;
-            }
-            header nav ul li {
-                margin: 10px 0;
-            }
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            .hero p {
-                font-size: 1.1em;
-            }
-            .section-title {
-                font-size: 2em;
-            }
-            .services-grid, #portfolio .portfolio-grid {
-                grid-template-columns: 1fr; /* 在小屏幕上单列显示 */
-            }
+            padding: 20px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <a href="#hero" class="logo">图文内容创作</a>
-            <nav>
-                <ul>
-                    <li><a href="#hero" class="active">首页</a></li>
-                    <li><a href="#about">关于我们</a></li>
-                    <li><a href="#services">核心服务</a></li>
-                    <li><a href="#portfolio">案例展示</a></li>
-                    <li><a href="#contact">联系我们</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>泊头市艾特网站服务中心</h1>
+        <p>专业宣传视频制作，为您的品牌提升影响力</p>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="container">
-            <h1>品牌故事撰写-图文内容创作</h1>
-            <p>专业图文内容创作，让您的品牌故事更生动，信息传递更高效。</p>
-            <a href="#services" class="cta-button">了解更多服务</a>
-        </div>
-    </section>
+    <div class="hero">
+        <h1>精彩视频，精彩呈现</h1>
+    </div>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">关于我们</h2>
-            <p>专注于高质量图文内容创作。我们深知在数字时代，优质的内容是连接品牌与用户的桥梁。我们的团队由经验丰富的撰稿人、设计师和营销专家组成，致力于为客户提供富有创意、精准定位且能产生实际效果的图文内容解决方案。</p>
-            <p>无论是品牌故事撰写、产品推广文案、社交媒体帖子，还是信息图表设计，都能为您量身定制，助力您的业务增长。</p>
-        </div>
-    </section>
-
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title">核心服务：图文内容创作</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>原创文章撰写</h3>
-                    <p>提供各类型高质量原创文章，包括博客文章、新闻稿、行业深度分析、产品评测等，确保内容独特性与专业性。</p>
-                </div>
-                <div class="service-item">
-                    <h3>社交媒体内容</h3>
-                    <p>为微博、微信公众号、抖音、小红书等主流社交媒体平台定制创意图文内容，增强用户互动，提升品牌影响力。</p>
-                </div>
-                <div class="service-item">
-                    <h3>营销文案策划</h3>
-                    <p>撰写具有吸引力和说服力的广告语、宣传册文案、落地页文案等，有效促进用户转化和销售增长。</p>
-                </div>
-                <div class="service-item">
-                    <h3>平面设计辅助</h3>
-                    <p>虽然本页不展示图片，但我们的服务包含为您的文字内容创作高质量配图、信息图表、海报等视觉元素，让内容更具吸引力。</p>
-                </div>
-                <div class="service-item">
-                    <h3>品牌故事构建</h3>
-                    <p>深度挖掘品牌核心价值，撰写引人入胜的品牌故事，建立与目标受众的情感连接，提升品牌忠诚度。</p>
-                </div>
-                 <div class="service-item">
-                    <h3>内容优化与编辑</h3>
-                    <p>对现有图文内容进行专业评估、优化和编辑，提升内容质量、可读性和搜索引擎友好度。</p>
-                </div>
+    <section class="section">
+        <h2>我们的服务</h2>
+        <p>我们专注于制作引人注目的宣传视频，帮助您的品牌脱颖而出。</p>
+        <div class="services">
+            <div class="service-card">
+                <h3>品牌故事</h3>
+                <p>通过视频讲述您的品牌故事，建立与受众的情感连接。</p>
+            </div>
+            <div class="service-card">
+                <h3>产品展示</h3>
+                <p>展示您的产品或服务特点，让观众更直观地了解。</p>
+            </div>
+            <div class="service-card">
+                <h3>活动宣传</h3>
+                <p>为您的活动制作宣传视频，吸引更多参与者。</p>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="section">
-        <div class="container">
-            <h2 class="section-title">我们的案例</h2>
-            <p style="text-align:center; max-width:800px; margin:-30px auto 40px auto;">我们为众多行业的客户提供了专业的图文内容创作服务，以下是部分案例简介，展示了我们的专业能力和多样化风格。</p>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h4>科技公司新品发布文案</h4>
-                        <p>为某智能硬件公司撰写系列新品发布推文，突出产品亮点与用户价值，获得广泛传播。</p>
-                        <a href="#" class="read-more">了解详情 &rarr;</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h4>生活方式品牌社交媒体文案</h4>
-                        <p>负责某生活方式品牌微信公众号日常文案内容创作，通过优质内容提升粉丝粘性与品牌美誉度。</p>
-                        <a href="#" class="read-more">了解详情 &rarr;</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h4>在线教育平台课程介绍文案</h4>
-                        <p>为在线教育机构撰写系列课程详情页文案和推广软文，有效提升课程报名转化率。</p>
-                        <a href="#" class="read-more">了解详情 &rarr;</a>
-                    </div>
-                </div>
-                 <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h4>餐饮品牌探店文案</h4>
-                        <p>为连锁餐饮品牌策划并执行系列探店推广文案，生动展现美食特色与用餐体验，吸引新客到店。</p>
-                        <a href="#" class="read-more">了解详情 &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">联系我们</h2>
-            <p style="text-align:center; max-width:800px; margin:-30px auto 40px auto;">如果您对我们的服务感兴趣，或有任何图文内容创作的需求，欢迎随时与我们联系。我们期待与您携手，共创精彩内容！</p>
-            <div class="contact-form">
-                <form action="#" method="POST"> <div class="form-group">
-                        <label for="name">您的称呼：</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">电子邮箱：</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">联系电话：</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">咨询主题：</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">具体需求：</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">发送咨询</button>
-                </form>
-            </div>
-            <div class="contact-info">
-                <p><strong>主要业务：</strong> 图文内容创作</p>
-                <p><strong>联系邮箱：</strong> info@aitenetwork.com </p>
-                <p><strong>联系电话：</strong> +86 15511783307 (示例)</p>
-                <p><strong>公司地址：</strong> 河北省泊头市</p>
-            </div>
-        </div>
+    <section class="section video-container">
+        <h2>看看我们的作品</h2>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024-2025  保留所有权利.</p>
-            <p>技术支持 <a href="#"></a></p>
-        </div>
+        <p>© 2025 泊头市艾特网站服务中心</p>
+        <p>联系方式：<a href="mailto:2514798@qq.com">2514798@qq.com</a> | 电话：15511458896</p>
+        <p>地址：河北省泊头市</p>
     </footer>
-
-    <script>
-        // 平滑滚动效果
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-
-                // 更新导航栏激活状态
-                document.querySelectorAll('header nav ul li a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-
-        // 页面加载时根据URL哈希值设置激活状态
-        window.addEventListener('DOMContentLoaded', () => {
-            const currentHash = window.location.hash;
-            if (currentHash) {
-                document.querySelectorAll('header nav ul li a').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === currentHash) {
-                        link.classList.add('active');
-                    }
-                });
-            } else {
-                // 默认激活第一个导航链接（首页）
-                const firstLink = document.querySelector('header nav ul li a');
-                if (firstLink) {
-                    firstLink.classList.add('active');
-                }
-            }
-        });
-
-        // 简单表单提交提示 (实际项目中需要后端处理)
-        const contactForm = document.querySelector('#contact .contact-form form');
-        if(contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault(); // 阻止表单默认提交行为
-                alert('感谢您的咨询！我们会尽快与您联系。');
-                this.reset(); // 清空表单
-            });
-        }
-
-    </script>
 
 </body>
 </html>
